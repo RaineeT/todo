@@ -1,0 +1,20 @@
+body { background-color: #1A1A1A;}
+
+div.content { background-color: #fff; padding: 2.5em 0; }
+
+.navbar { margin-bottom: 0; }
+
+.footer-links-container { border-top: 1px solid #585858; border-bottom: 1px solid #000; }
+.footer-links { padding: 20px 0; font-size: 11px; color: #BBB; background: #1A1A1A; }
+.footer-links a { color: #666; }
+.footer-links ul { padding: 0; margin: 0; }
+.footer-links li { margin-bottom: .6em; list-style: none; }
+
+.image { background-position: center; background-repeat: no-repeat; margin: 0 auto; }
+.image-250 { width: 250px; height: 250px; }
+
+.row-modal { padding: 5px; }
+.row-modal div p { padding: 10px; }
+.modal-body { overflow-y: visible; padding: 0px; }
+.modal-body div.row div form { padding-top: 15px; }
+.modal { overflow: visible; }
