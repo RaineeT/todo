@@ -1,0 +1,27 @@
+{% set class = 'user_login' %}
+{% set modal_header = 'Login' %}
+{% extends "templates/modal.twig" %}
+
+{% block resources %}
+
+{% endblock resources %}
+
+{% block content %}
+
+<form id="login" class="form-horizontal" action="auth/login" method="POST">
+	<dl class="dl-horizontal">
+		<dt>Username:</dt>
+		<dd><input type="text" class="input-large" placeholder="Username:" /></dd>
+		<p class="help-block">Enter your Username</p>
+
+		<dt>Password:</dt>
+		<dd><input type="text" class="input-large" placeholder="Password:" /></dd>
+		<p class="help-block">Passwords are case sensitive</p>
+	</dl>
+</form>
+
+{% endblock content %}
+
+{% block footer %}
+	<a href="#" class="btn btn-primary">Sign In</a>
+{% endblock footer %}

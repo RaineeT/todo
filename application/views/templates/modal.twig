@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	$(function(){
+		{% block onload %}{% endblock onload %}
+	});
+
+	{% block resources %}{% endblock resources %}
+</script>
+<div class="{{ class }} modal hide loaded_modal">
+	{% if modal_header is defined and modal_header != '' %}
+		<div class="modal-header">
+			<h2> {{ modal_header }} </h2>
+		</div>
+	{% endif %}
+	<div class="modal-body">
+		<div class="span6">
+			{% block content %}
+
+			{% endblock content %}
+		</div>
+	</div>
+	<div class="modal-footer">
+		{% block footer %}
+
+		{% endblock footer %}
+	</div>
+</div>
