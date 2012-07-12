@@ -1,0 +1,8 @@
+[submodule "modules/twig"]
+	path = modules/twig
+	url = git@github.com:nichcurtis/KO3-Twig.git
+	ignore = dirty
+[submodule "modules/nosql"]
+	path = modules/nosql
+	url = git@github.com:nichcurtis/KO3-NoSQL.git
+	ignore = dirty
