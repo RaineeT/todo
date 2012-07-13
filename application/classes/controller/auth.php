@@ -3,7 +3,6 @@ defined('SYSPATH') or die('No direct script access.');
  
 class Controller_Auth extends Controller_Template_Twig
 {
-  public $template = 'auth/index';
 
   /**
    * Initialize properties before running the controller methods (actions),

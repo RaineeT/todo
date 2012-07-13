@@ -1,4 +1,4 @@
-{% set class = 'Login_signup_modal' %}
+{% set class = 'Register_signup_modal' %}
 {% set modal_header = 'Singup Page' %}
 {% extends "templates/modal.twig" %}
 
@@ -13,6 +13,8 @@
 {% endblock content %}
 
 {% block footer %}
-<a href="#" class="btn" data-dismiss="modal">Close</a>
-<a href="#" class="btn btn-primary">Sign In</a>
+<button class="btn btn-primary" data-dismiss="modal">Close</button>
+<button class="btn btn-primary" data-dismiss="modal">Register</button>
+<!-- <a href="#" class="btn" data-dismiss="modal">Close</a>
+<a href="#" class="btn btn-primary">Sign In</a> -->
 {% endblock footer %}

@@ -1,6 +1,6 @@
 {% set class = 'Login_signin_modal' %}
-{% set modal_header = 'Singin Page' %}
-{% extends "../templates/modal.twig" %}
+{% set modal_header = 'Login Page' %}
+{% extends "templates/modal.twig" %}
 
 {% block resources %}
 
@@ -13,6 +13,6 @@
 {% endblock content %}
 
 {% block footer %}
-<a href="#" class="btn" data-dismiss="modal">Close</a>
-<a href="#" class="btn btn-primary">Sign In</a>
+<button class="btn btn-primary" data-dismiss="modal">Close</button>
+<button class="btn btn-primary" data-dismiss="modal">Login</button>
 {% endblock footer %}
