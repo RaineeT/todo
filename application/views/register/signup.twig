@@ -1,0 +1,18 @@
+{% set class = 'Login_signup_modal' %}
+{% set modal_header = 'Singup Page' %}
+{% extends "templates/modal.twig" %}
+
+{% block resources %}
+
+{% endblock resources %}
+
+{% block content %}
+<form id="{{ class }}_form" class="form-horizontal" action="register/signup" method="POST">
+	<h1>Im a modal</h1>
+</form>
+{% endblock content %}
+
+{% block footer %}
+<a href="#" class="btn" data-dismiss="modal">Close</a>
+<a href="#" class="btn btn-primary">Sign In</a>
+{% endblock footer %}

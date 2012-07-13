@@ -31,12 +31,7 @@ class Controller_Auth extends Controller_Template_Twig
 
 	public function action_index()
 	{
-		$this->template->title = 'ToDo.com';
-	}
-
-	public function action_login()
-	{
-		$this->request->redirect('login/index');
+		
 	}
 
   /**
