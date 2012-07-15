@@ -1,0 +1,36 @@
+{% set class = 'Auth_login_modal' %}
+{% set modal_header = 'Member Login' %}
+{% extends "templates/modal.twig" %}
+
+{% block resources %}
+	$(function(){
+		$('#signin').click(function(){
+			var name = $('#name').val();
+			var password = $('#password').val();
+
+			$.post('auth/login', { name: name, password: password });
+		});
+	});
+{% endblock resources %}
+
+{% block content %}
+	<form id="{{ class }}_form" class="form-horizontal" action="auth/login" method="POST">
+		<div class="control-group">
+			<label for="name" class="control-label">Name</label>
+			<div class="controls">
+				<input type="text" id="name" name="name" value=""/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="password" class="control-label">Password</label>
+			<div class="controls">
+				<input type="text" id="password" name="password" value=""/>
+			</div>
+		</div>
+	</form>
+{% endblock content %}
+
+{% block footer %}
+	<button id="signin" class="btn btn-primary" >Login</button>
+	<button class="btn btn-primary" data-dismiss="modal">Close</button>
+{% endblock footer %}

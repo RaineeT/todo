@@ -1,0 +1,43 @@
+{% set class = 'Auth_register_modal' %}
+{% set modal_header = 'New Member Registration' %}
+{% extends "templates/modal.twig" %}
+
+{% block resources %}
+	$(function(){
+		$('#signup').click(function(){
+			var name = $('#name').val();
+			var password = $('#password').val();
+			var password = $('#email').val();
+
+			$.post('auth/login', { name: name, password: password, email: email });
+		});
+	});
+{% endblock resources %}
+
+{% block content %}
+	<form id="{{ class }}_form" class="form-horizontal" action="auth/register" method="POST">
+		<div class="control-group">
+			<label for="name" class="control-label">Name</label>
+			<div class="controls">
+				<input type="text" id="name" name="name" value=""/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="password" class="control-label">Password</label>
+			<div class="controls">
+				<input type="text" id="password" name="password" value=""/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="email" class="control-label">Email</label>
+			<div class="controls">
+				<input type="text" id="email" name="email" value=""/>
+			</div>
+		</div>
+	</form>
+{% endblock content %}
+
+{% block footer %}
+	<button id="signup" class="btn btn-primary">Register</button>
+	<button class="btn btn-primary" data-dismiss="modal">Close</button>
+{% endblock footer %}

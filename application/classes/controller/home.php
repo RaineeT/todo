@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Auth extends Controller_Template_Twig
+class Controller_Home extends Controller_Template_Twig
 {
 	/**
 	 * Initialize properties before running the controller methods (actions),
@@ -17,22 +17,12 @@ class Controller_Auth extends Controller_Template_Twig
 		$this->template->footer = '';
 		$this->template->styles = array();
 		$this->template->scripts = array();
+
+		$this->response->body('made it home');
 	}
 
-	public function action_login()
+	public function action_add()
 	{
-		if(isset($_POST['name']) && isset($_POST['password']) && ! empty($_POST['name']) && ! empty($_POST['password']))
-		{
-			$this->response->redirect('home/index');
-		}
-	}
-
-	public function action_register()
-	{
-		if(isset($_POST['name']) && isset($_POST['password']) && isset($_POST['email']) &&
-		! empty($_POST['name']) && ! empty($_POST['password']) && ! empty($_POST['name']))
-		{
-			$this->response->redirect('home/index');
-		}
+		
 	}
 }

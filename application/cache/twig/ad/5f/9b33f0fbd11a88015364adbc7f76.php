@@ -1,7 +1,7 @@
 <?php
 
-/* auth/login.twig */
-class __TwigTemplate_21b2ad1c27716488fb6eee484b214430 extends Twig_Template
+/* auth/register.twig */
+class __TwigTemplate_ad5f9b33f0fbd11a88015364adbc7f76 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -24,9 +24,9 @@ class __TwigTemplate_21b2ad1c27716488fb6eee484b214430 extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        $context["class"] = "Auth_login_modal";
+        $context["class"] = "Auth_register_modal";
         // line 2
-        $context["modal_header"] = "Member Login";
+        $context["modal_header"] = "New Member Registration";
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -35,23 +35,24 @@ class __TwigTemplate_21b2ad1c27716488fb6eee484b214430 extends Twig_Template
     {
         // line 6
         echo "\t\$(function(){
-\t\t\$('#signin').click(function(){
+\t\t\$('#signup').click(function(){
 \t\t\tvar name = \$('#name').val();
 \t\t\tvar password = \$('#password').val();
+\t\t\tvar password = \$('#email').val();
 
-\t\t\t\$.post('auth/login', { name: name, password: password });
+\t\t\t\$.post('auth/login', { name: name, password: password, email: email });
 \t\t});
 \t});
 ";
     }
 
-    // line 16
+    // line 17
     public function block_content($context, array $blocks = array())
     {
-        // line 17
+        // line 18
         echo "\t<form id=\"";
         echo twig_escape_filter($this->env, $this->getContext($context, "class"), "html", null, true);
-        echo "_form\" class=\"form-horizontal\" action=\"auth/login\" method=\"POST\">
+        echo "_form\" class=\"form-horizontal\" action=\"auth/register\" method=\"POST\">
 \t\t<div class=\"control-group\">
 \t\t\t<label for=\"name\" class=\"control-label\">Name</label>
 \t\t\t<div class=\"controls\">
@@ -64,22 +65,28 @@ class __TwigTemplate_21b2ad1c27716488fb6eee484b214430 extends Twig_Template
 \t\t\t\t<input type=\"text\" id=\"password\" name=\"password\" value=\"\"/>
 \t\t\t</div>
 \t\t</div>
+\t\t<div class=\"control-group\">
+\t\t\t<label for=\"email\" class=\"control-label\">Email</label>
+\t\t\t<div class=\"controls\">
+\t\t\t\t<input type=\"text\" id=\"email\" name=\"email\" value=\"\"/>
+\t\t\t</div>
+\t\t</div>
 \t</form>
 ";
     }
 
-    // line 33
+    // line 40
     public function block_footer($context, array $blocks = array())
     {
-        // line 34
-        echo "\t<button id=\"signin\" class=\"btn btn-primary\" >Login</button>
+        // line 41
+        echo "\t<button id=\"signup\" class=\"btn btn-primary\">Register</button>
 \t<button class=\"btn btn-primary\" data-dismiss=\"modal\">Close</button>
 ";
     }
 
     public function getTemplateName()
     {
-        return "auth/login.twig";
+        return "auth/register.twig";
     }
 
     public function isTraitable()
@@ -89,6 +96,6 @@ class __TwigTemplate_21b2ad1c27716488fb6eee484b214430 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  73 => 34,  70 => 33,  50 => 17,  47 => 16,  35 => 6,  32 => 5,  27 => 2,  25 => 1,);
+        return array (  80 => 41,  77 => 40,  51 => 18,  48 => 17,  35 => 6,  32 => 5,  27 => 2,  25 => 1,);
     }
 }
