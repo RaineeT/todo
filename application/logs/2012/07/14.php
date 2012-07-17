@@ -27,3 +27,33 @@
 #14 C:\Users\Rainee\Documents\GitHub\todo\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
 #15 C:\Users\Rainee\Documents\GitHub\todo\index.php(109): Kohana_Request->execute()
 #16 {main}
+2012-07-14 21:05:10 --- ERROR: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 31 ]
+2012-07-14 21:05:10 --- STRACE: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 31 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-14 21:05:12 --- ERROR: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 31 ]
+2012-07-14 21:05:12 --- STRACE: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 31 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-14 21:05:49 --- ERROR: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 23 ]
+2012-07-14 21:05:49 --- STRACE: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 23 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-14 21:05:51 --- ERROR: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 23 ]
+2012-07-14 21:05:51 --- STRACE: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 23 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-14 21:05:51 --- ERROR: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 23 ]
+2012-07-14 21:05:51 --- STRACE: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 23 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-14 21:05:51 --- ERROR: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 23 ]
+2012-07-14 21:05:51 --- STRACE: ErrorException [ 1 ]: Call to undefined method Response::redirect() ~ APPPATH\classes\controller\auth.php [ 23 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}

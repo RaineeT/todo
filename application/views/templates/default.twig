@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="../../assets/css/bootstrap.css" type="text/css">
 		<link rel="stylesheet" href="../../assets/css/bootstrap-responsive.css" type="text/css">
 	</head>
-	
+
 	<body>
 		<div id='container'>
 			<div class="navbar navbar-fixed-top">
@@ -47,9 +47,27 @@
 		<script type="text/javascript" src="../../assets/js/libs/jquery-ui-1.8.16.custom.min.js"></script>
 		<script type="text/javascript" src="../../assets/js/libs/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../../assets/js/plugins.js"></script>
-		<script type="text/javascript" src="../../assets/js/third-party/tag-it.js"></script>
-		<script type="text/javascript" src="../../assets/js/third-party/chosen/chosen.jquery.min.js"></script>
-		<script type="text/javascript" src="../../assets/js/third-party/anytime/anytime.c.js"></script>
 		<script type="text/javascript" src="../../assets/js/script.js"></script>
+		<script>
+			function onfinalload () {
+
+			}
+			$(document).ready(function () {
+				domModal = $('#modal-from-dom');
+
+				$('#btnPrimary').live('click', function(){
+					alert('btnPrimary clicked!');
+					domModal.modal('hide');
+				});
+
+				$('#btnSecondary').live('click', function(){
+					alert('btnSecondary clicked!');
+					domModal.modal('hide');
+				});
+
+				//Removes the close 'x'
+				$('.close', $('#modal-from-dom')).remove();
+			});
+		</script>
 	</body>
 </html>

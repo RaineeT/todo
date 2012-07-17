@@ -1,7 +1,7 @@
 <?php
 
-/* auth/index.twig */
-class __TwigTemplate_541a4396b1b87f50c28cfc0cf7736c02 extends Twig_Template
+/* home/index.twig */
+class __TwigTemplate_3a1ecfe38e05f38493a62e1261583afa extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -24,7 +24,7 @@ class __TwigTemplate_541a4396b1b87f50c28cfc0cf7736c02 extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        $context["title"] = "Welcome";
+        $context["title"] = "Home";
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -49,18 +49,17 @@ class __TwigTemplate_541a4396b1b87f50c28cfc0cf7736c02 extends Twig_Template
     {
         // line 13
         echo "\t<div>
-\t\t<h1>Welcome to ToDo.com</h1>
+\t\t<h1>Welcome to HOME PAGE</h1>
 \t\t<br /><br />
 
-\t\t<a href=\"auth/login\" class=\"btn btn-primary launch_modal\">Log In</a>
-\t\t<a href=\"auth/register\" class=\"btn btn-inverse launch_modal\">Register</a>
+\t\t<p>This is just some text to let you know where your at homie</p>
 \t</div>
 ";
     }
 
     public function getTemplateName()
     {
-        return "auth/index.twig";
+        return "home/index.twig";
     }
 
     public function isTraitable()

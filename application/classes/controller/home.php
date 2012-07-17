@@ -18,11 +18,6 @@ class Controller_Home extends Controller_Template_Twig
 		$this->template->styles = array();
 		$this->template->scripts = array();
 
-		$this->response->body('made it home');
-	}
 
-	public function action_add()
-	{
-		
 	}
 }

@@ -59,7 +59,7 @@ class __TwigTemplate_13dfddd3dae35bbe701d20510f8084d8 extends Twig_Template
 \t\t<link rel=\"stylesheet\" href=\"../../assets/css/bootstrap.css\" type=\"text/css\">
 \t\t<link rel=\"stylesheet\" href=\"../../assets/css/bootstrap-responsive.css\" type=\"text/css\">
 \t</head>
-\t
+
 \t<body>
 \t\t<div id='container'>
 \t\t\t<div class=\"navbar navbar-fixed-top\">
@@ -91,10 +91,28 @@ class __TwigTemplate_13dfddd3dae35bbe701d20510f8084d8 extends Twig_Template
 \t\t<script type=\"text/javascript\" src=\"../../assets/js/libs/jquery-ui-1.8.16.custom.min.js\"></script>
 \t\t<script type=\"text/javascript\" src=\"../../assets/js/libs/bootstrap/bootstrap.min.js\"></script>
 \t\t<script type=\"text/javascript\" src=\"../../assets/js/plugins.js\"></script>
-\t\t<script type=\"text/javascript\" src=\"../../assets/js/third-party/tag-it.js\"></script>
-\t\t<script type=\"text/javascript\" src=\"../../assets/js/third-party/chosen/chosen.jquery.min.js\"></script>
-\t\t<script type=\"text/javascript\" src=\"../../assets/js/third-party/anytime/anytime.c.js\"></script>
 \t\t<script type=\"text/javascript\" src=\"../../assets/js/script.js\"></script>
+\t\t<script>
+\t\t\tfunction onfinalload () {
+
+\t\t\t}
+\t\t\t\$(document).ready(function () {
+\t\t\t\tdomModal = \$('#modal-from-dom');
+
+\t\t\t\t\$('#btnPrimary').live('click', function(){
+\t\t\t\t\talert('btnPrimary clicked!');
+\t\t\t\t\tdomModal.modal('hide');
+\t\t\t\t});
+
+\t\t\t\t\$('#btnSecondary').live('click', function(){
+\t\t\t\t\talert('btnSecondary clicked!');
+\t\t\t\t\tdomModal.modal('hide');
+\t\t\t\t});
+
+\t\t\t\t//Removes the close 'x'
+\t\t\t\t\$('.close', \$('#modal-from-dom')).remove();
+\t\t\t});
+\t\t</script>
 \t</body>
 </html>";
     }
@@ -119,6 +137,6 @@ class __TwigTemplate_13dfddd3dae35bbe701d20510f8084d8 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  104 => 35,  101 => 34,  79 => 37,  77 => 34,  56 => 15,  47 => 13,  43 => 12,  39 => 11,  35 => 10,  31 => 9,  27 => 8,  18 => 1,  49 => 13,  46 => 12,  41 => 9,  38 => 8,  33 => 5,  30 => 4,  25 => 1,);
+        return array (  122 => 35,  119 => 34,  79 => 37,  77 => 34,  56 => 15,  47 => 13,  43 => 12,  39 => 11,  35 => 10,  31 => 9,  27 => 8,  18 => 1,  49 => 13,  46 => 12,  41 => 9,  38 => 8,  33 => 5,  30 => 4,  25 => 1,);
     }
 }
