@@ -7,13 +7,103 @@
 
 {% block resources %}
 
+	$(function() {
+		$(document).on('load', function(){
+
+		});
+		$('#submitItem').on('click', function() {
+			var title = $('#title').val();
+			var description = $('#description').val();
+			var due = $('#due').val();
+			val url = $('#url').val();
+			var image = $('#url').val();
+
+			$.post(	'home/addItem',
+				{
+					title : title,
+					description : description,
+					due : due,
+					url : url,
+					image : image,
+				},
+				function(data){
+					alert(data);
+					if(data == 'FALSE')
+					{
+						$('#homeErrorMsg').append('Invalid Login Credentials...  Try Again');
+					}
+					else if(data == 'TRUE')
+					{
+						document.location.href = 'home/';
+					}
+				}
+			);
+			event.preventDefault();
+		});
+	});
+
 {% endblock resources %}
 
 {% block content %}
-	<div>
-		<h1>Welcome to HOME PAGE</h1>
-		<br /><br />
-
-		<p>This is just some text to let you know where your at homie</p>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span4 well">
+				<form id="list" class="form-horizontal pull-left" action="home/addItem" method="post">
+					<fieldset>
+						<legend>Add New Item</legend>
+						<div class="control-group">
+							<label class="control-label" for="title">Title</label>
+							<div class="controls">
+								<input type="text" class="input-large" name="title" id="title">
+								<p class="help-block">Enter a title</p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="description">Description</label>
+							<div class="controls">
+								<textarea class="input-large" id="description" rows="6"></textarea>
+								<p class="help-block">Please provide a short description</p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="due">Date Due</label>
+							<div class="controls">
+								<input type="text" class="input-large" name="due" id="due">
+								<p class="help-block">Enter a Due Date</p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="url">URL</label>
+							<div class="controls">
+								<input type="text" class="input-large" name="url" id="url">
+								<p class="help-block">Enter the url</p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="image">Image</label>
+							<div class="controls">
+								<input type="file" class="input-large" name="image" id="Image">
+								<p class="help-block">Submit an image</p>
+							</div>
+						</div>
+						<div class="form-actions">
+							<button id="submitItem" class="btn btn-primary">Post Item<span> </span><i class="icon-thumbs-up icon-white"></i></button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="span8 well">
+				<div class="pagination">
+					<ul>
+						<li><a href="#">Prev</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">Next</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 {% endblock content %}

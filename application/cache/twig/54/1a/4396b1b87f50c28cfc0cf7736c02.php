@@ -55,6 +55,8 @@ class __TwigTemplate_541a4396b1b87f50c28cfc0cf7736c02 extends Twig_Template
 \t\t<a href=\"auth/login\" class=\"btn btn-primary launch_modal\">Log In</a>
 \t\t<a href=\"auth/register\" class=\"btn btn-inverse launch_modal\">Register</a>
 \t</div>
+\t<br /><br />
+\t<strong><div id=\"errormsg\" class=\"span4\" style=\"color: red;\"></div></strong>
 ";
     }
 

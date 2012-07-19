@@ -19,7 +19,7 @@ return array
 			 * Ports and sockets may be appended to the hostname.
 			 */
 			'hostname'   => 'localhost',
-			'database'   => 'todo_login',
+			'database'   => 'todo',
 			'username'   => 'root',
 			'password'   => 'RomeoT01',
 			'persistent' => FALSE,

@@ -8,21 +8,21 @@ class Model_Login extends Model_Database
 	 */
 	public function login($username, $userpassword)
 	{
-		$sql = "SELECT *
-				FROM users
-				WHERE username = '$username' AND password = '$userpassword'";
+		$query = DB::Query(Database::SELECT, "SELECT * FROM users WHERE username = :username AND password = :userpassword");
+		$query->param(':username', $username)
+				->param(':userpassword', $userpassword);
+		$results = $query->execute();
 
-		$result = DB::Query(Database::SELECT, $sql)->execute();
 		$count = 0;
 
-		foreach($result as $element)
+		foreach($results as $element)
 		{
 			$count += 1;
 		}
 
 		if($count == 0)
 		{
-			return 'Invalid';
+			return FALSE;
 		}
 		else
 		{
@@ -30,5 +30,4 @@ class Model_Login extends Model_Database
 		}
 	}
 }
-
 ?>

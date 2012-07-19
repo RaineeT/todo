@@ -8,14 +8,13 @@ class Model_Register extends Model_Database
 	 */
 	public function checkname($name)
 	{
-		$sql = "SELECT *
-				FROM users
-				WHERE username = '$name'";
+		$query = DB::Query(Database::SELECT, "SELECT * FROM users WHERE username = :name");
+		$query->param(':name', $name);
+		$results = $query->execute();
 
-		$result = DB::Query(Database::SELECT, $sql)->execute();
 		$count = 0;
 
-		foreach($result as $element)
+		foreach($results as $element)
 		{
 			$count += 1;
 		}
@@ -26,7 +25,7 @@ class Model_Register extends Model_Database
 		}
 		else
 		{
-			return 'Invalid';
+			return FALSE;
 		}
 	}
 
@@ -35,20 +34,21 @@ class Model_Register extends Model_Database
 		$regex = $strict ? '/^([.0-9a-z_-]+)@(([0-9a-z-]+\.)+[0-9a-z]{2,4})$/i' : '/^([*+!.&#$|\'\\%\/0-9a-z^_`{}=?~:-]+)@(([0-9a-z-]+\.)+[0-9a-z]{2,4})$/i';
 		if(preg_match($regex, trim($email), $matches))
 		{
-			return FALSE;		// Valid email address
+			return TRUE;		// Valid email address
 		}
 		else
 		{
-			return TRUE;		// Invalid email address
+			return FALSE;		// Invalid email address
 		}
 	}
 
 	public function register($name, $password, $email)
 	{
-		$sql = "INSERT INTO users (name, password, email)
-				VALUES('$name', '$password', '$email')";
-
-		$result = DB::Query(Database::INSERT, $sql)->execute();
+		$query = DB::Query(Database::INSERT, "INSERT INTO users (username, password, email) VALUES(:username, :password, :email)");
+		$query->param(':username', $name)
+				->param(':password', $password)
+				->param(':email', $email);
+		$result = $query->execute();
 
 		return $result;
 	}

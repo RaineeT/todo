@@ -2,29 +2,29 @@
 
 return array
 (
-	'default'	=>	array
+	'default' => array
 	(
-		'suffix'					=>	'twig',
+	 	'suffix'					=>	'twig',
 
-		'environment'	=>	array
+		'environment' => array
 		(
 			'debug'					=>	TRUE,
 			'trim_blocks'			=>	TRUE,
 			'charset'				=>	'utf-8',
-			'base_template_class'	=>	'Twig_Template',
+			'base_template_class' 	=>	'Twig_Template',
 			'cache'					=>	APPPATH.'cache/twig',
 			'auto_reload'			=>	TRUE,
-			'strict_variables'		=> TRUE,
+			'strict_variables'		=>	TRUE,
 
-			'syntax'	=>	array
+			'syntax' => array
 			(
-				'tab_block'			=>	array('{%', '%}'),
-				'tag_comment'		=>	array('{#', '#}'),
+				'tag_block'			=>	array('{%', '%}'),
+				'tag_comment' 		=>	array('{#', '#}'),
 				'tag_variable'		=>	array('{{', '}}'),
 			)
 		),
 
-		'extensions'	=> array
+		'extensions' => array
 		(
 
 		),

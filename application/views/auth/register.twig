@@ -3,22 +3,35 @@
 {% extends "templates/modal.twig" %}
 
 {% block resources %}
+
 	$(function() {
 		$('#signup').on('click', function() {
 			var name = $('#name').val();
 			var password = $('#password').val();
 			var email = $('#email').val();
 
-			$.post(	'../index.php/auth/register',
+			$.post(	'auth/register',
 				{
 					name : name,
 					password : password,
 					email : email,
+				},
+				function(data){
+					alert(data);
+					if(data == 'FALSE')
+					{
+						$('#welcomeErrorMsg').append('Invalid Registration...  Try Again');
+					}
+					else if(data == 'TRUE')
+					{
+						document.location.href = 'home/';
+					}
 				}
 			);
 			event.preventDefault();
 		});
 	});
+
 {% endblock resources %}
 
 {% block content %}

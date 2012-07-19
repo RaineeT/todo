@@ -2,22 +2,51 @@
 
 class Controller_Home extends Controller_Template_Twig
 {
-	/**
-	 * Initialize properties before running the controller methods (actions),
-	 * so they are available to our action.
-	 */
+	public function before()
+	{
+		parent::before();
+	}
+
+	public function after()
+	{
+		$this->template->set('title', 'ToDo.com');
+		$this->template->set('meta_keywords', 'To do listings');
+		$this->template->set('meta_description', 'A list of things to do');
+		$this->template->set('meta_copywrite', '&#169 ToDo.com, 2012');
+		$this->template->set('header', '');
+		$this->template->set('content', '');
+		$this->template->set('footer', '');
+		$this->template->set('styles', array());
+		$this->template->set('scripts', array());
+
+		parent::after();
+	}
+
 	public function action_index()
 	{
-		$this->template->title = 'ToDo.com';
-		$this->template->meta_keywords = 'To do listings';
-		$this->template->meta_description = 'A list of things to do';
-		$this->template->meta_copywrite = '&#169 ToDo.com, 2012';
-		$this->template->header = '';
-		$this->template->content = '';
-		$this->template->footer = '';
-		$this->template->styles = array();
-		$this->template->scripts = array();
 
+	}
 
+	public function action_addItem()
+	{
+		if($_SERVER['REQUEST_METHOD'] == 'POST')
+		{
+			// Load Model
+			$insert = new Model_List();
+
+			// Validate login against _db
+			$status = $insert->item($_POST['title'], $_POST['description'], $_POST['due'], $_POST['url'], $_POST['image']);
+
+			if($status)
+			{
+				echo 'TRUE';
+				exit;
+			}
+			else
+			{
+				echo 'FALSE';
+				exit;
+			}
+		}
 	}
 }

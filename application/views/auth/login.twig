@@ -9,10 +9,21 @@
 			var username = $('#username').val();
 			var userpassword = $('#userpassword').val();
 
-			$.post(	'../index.php/auth/login',
+			$.post(	'auth/login',
 				{
 					username : username,
 					userpassword : userpassword,
+				},
+				function(data){
+					alert(data);
+					if(data == 'FALSE')
+					{
+						$('#welcomeErrorMsg').append('Invalid Login Credentials...  Try Again');
+					}
+					else if(data == 'TRUE')
+					{
+						document.location.href = 'home/';
+					}
 				}
 			);
 			event.preventDefault();

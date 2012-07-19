@@ -34,29 +34,42 @@ class __TwigTemplate_ad5f9b33f0fbd11a88015364adbc7f76 extends Twig_Template
     public function block_resources($context, array $blocks = array())
     {
         // line 6
-        echo "\t\$(function() {
+        echo "
+\t\$(function() {
 \t\t\$('#signup').on('click', function() {
 \t\t\tvar name = \$('#name').val();
 \t\t\tvar password = \$('#password').val();
 \t\t\tvar email = \$('#email').val();
 
-\t\t\t\$.post(\t'../index.php/auth/register',
+\t\t\t\$.post(\t'auth/register',
 \t\t\t\t{
 \t\t\t\t\tname : name,
 \t\t\t\t\tpassword : password,
 \t\t\t\t\temail : email,
+\t\t\t\t},
+\t\t\t\tfunction(data){
+\t\t\t\t\talert(data);
+\t\t\t\t\tif(data == 'FALSE')
+\t\t\t\t\t{
+\t\t\t\t\t\t\$('#errormsg').append('Invalid Registration...  Try Again');
+\t\t\t\t\t}
+\t\t\t\t\telse if(data == 'TRUE')
+\t\t\t\t\t{
+\t\t\t\t\t\tdocument.location.href = 'home/';
+\t\t\t\t\t}
 \t\t\t\t}
 \t\t\t);
 \t\t\tevent.preventDefault();
 \t\t});
 \t});
+
 ";
     }
 
-    // line 24
+    // line 37
     public function block_content($context, array $blocks = array())
     {
-        // line 25
+        // line 38
         echo "\t<form id=\"register\" class=\"form-horizontal ";
         echo twig_escape_filter($this->env, $this->getContext($context, "class"), "html", null, true);
         echo "_form\" action=\"auth/register\" method=\"POST\">
@@ -84,10 +97,10 @@ class __TwigTemplate_ad5f9b33f0fbd11a88015364adbc7f76 extends Twig_Template
 ";
     }
 
-    // line 49
+    // line 62
     public function block_footer($context, array $blocks = array())
     {
-        // line 50
+        // line 63
         echo "\t<button id=\"signup\" class=\"btn btn-primary submit_button\" data-dismiss=\"modal\">Register</button>
 \t<button class=\"btn btn-inverse\" data-dismiss=\"modal\">Cancel</button>
 ";
@@ -105,6 +118,6 @@ class __TwigTemplate_ad5f9b33f0fbd11a88015364adbc7f76 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  89 => 50,  86 => 49,  58 => 25,  55 => 24,  35 => 6,  32 => 5,  27 => 2,  25 => 1,);
+        return array (  102 => 63,  99 => 62,  71 => 38,  68 => 37,  35 => 6,  32 => 5,  27 => 2,  25 => 1,);
     }
 }

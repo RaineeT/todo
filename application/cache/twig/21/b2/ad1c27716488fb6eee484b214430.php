@@ -40,10 +40,21 @@ class __TwigTemplate_21b2ad1c27716488fb6eee484b214430 extends Twig_Template
 \t\t\tvar username = \$('#username').val();
 \t\t\tvar userpassword = \$('#userpassword').val();
 
-\t\t\t\$.post(\t'../index.php/auth/login',
+\t\t\t\$.post(\t'auth/login',
 \t\t\t\t{
 \t\t\t\t\tusername : username,
 \t\t\t\t\tuserpassword : userpassword,
+\t\t\t\t},
+\t\t\t\tfunction(data){
+\t\t\t\t\talert(data);
+\t\t\t\t\tif(data == 'FALSE')
+\t\t\t\t\t{
+\t\t\t\t\t\t\$('#errormsg').append('Invalid Login Credentials...  Try Again');
+\t\t\t\t\t}
+\t\t\t\t\telse if(data == 'TRUE')
+\t\t\t\t\t{
+\t\t\t\t\t\tdocument.location.href = 'home/';
+\t\t\t\t\t}
 \t\t\t\t}
 \t\t\t);
 \t\t\tevent.preventDefault();
@@ -53,10 +64,10 @@ class __TwigTemplate_21b2ad1c27716488fb6eee484b214430 extends Twig_Template
 ";
     }
 
-    // line 24
+    // line 35
     public function block_content($context, array $blocks = array())
     {
-        // line 25
+        // line 36
         echo "\t<form id=\"login\" class=\"form-horizontal ";
         echo twig_escape_filter($this->env, $this->getContext($context, "class"), "html", null, true);
         echo "_form\" action=\"auth/login\" method=\"POST\">
@@ -77,10 +88,10 @@ class __TwigTemplate_21b2ad1c27716488fb6eee484b214430 extends Twig_Template
 ";
     }
 
-    // line 42
+    // line 53
     public function block_footer($context, array $blocks = array())
     {
-        // line 43
+        // line 54
         echo "\t<button id=\"signin\" class=\"btn btn-primary submit_button\" data-dismiss=\"modal\">Log In</button>
 \t<button class=\"btn btn-inverse\" data-dismiss=\"modal\">Cancel</button>
 ";
@@ -98,6 +109,6 @@ class __TwigTemplate_21b2ad1c27716488fb6eee484b214430 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  82 => 43,  79 => 42,  58 => 25,  55 => 24,  35 => 6,  32 => 5,  27 => 2,  25 => 1,);
+        return array (  93 => 54,  90 => 53,  69 => 36,  66 => 35,  35 => 6,  32 => 5,  27 => 2,  25 => 1,);
     }
 }
